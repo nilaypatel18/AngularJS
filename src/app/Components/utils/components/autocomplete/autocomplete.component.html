@@ -1,0 +1,13 @@
+<form class="example-form">
+    <input type="text"
+           placeholder="Search for a options"
+           [formControl]="control"
+           [matAutocomplete]="auto">
+    <mat-autocomplete #auto="matAutocomplete">
+        <mat-option
+        *ngFor="let option of options; let i = index"
+        [value]="option.value"
+        >{{ option.label }}</mat-option
+      >
+    </mat-autocomplete>
+  </form>

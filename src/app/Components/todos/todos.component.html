@@ -1,0 +1,42 @@
+<div class="w-100 d-flex text-center flex-raw gap-4 mt-2">
+  <div>
+    <button type="button" class="btn btn-dark" (click)="openDialog()">
+      Add Todo Modal
+    </button>
+  </div>
+  <div>
+    <app-select
+      [options]="exoptions"
+      (handleSelect)="onSelect($event)"
+    ></app-select>
+  </div>
+  <div>
+    <app-daterangepicker
+      (selectHandle)="dateHandleChange($event)"
+      [selectedRange]="todoRange"
+    ></app-daterangepicker>
+  </div>
+  <div>
+    <app-datepicker
+      (selectHandle)="dateHandleChange($event)"
+      [selectedDate]="todoDate"
+    ></app-datepicker>
+  </div>
+  <div>
+   <app-autocomplete [options]="exoptions"></app-autocomplete>
+  </div>
+  <div></div>
+</div>
+<!-- <div *ngIf="this.todos.length === 0; else todoBlock" class="text-center my-5">
+  No Todos to display
+</div>
+<ng-template #todoBlock>
+  <ul *ngFor="let todo of todos; index as i" class="p-0 my-2">
+    <app-todo-items
+      [todo]="todo"
+      [index]="i"
+      (deleteTodo)="deleteTodoObj(todo)"
+      (markDoneTodo)="markDoneHandle($event)"
+    ></app-todo-items>
+  </ul>
+</ng-template> -->
